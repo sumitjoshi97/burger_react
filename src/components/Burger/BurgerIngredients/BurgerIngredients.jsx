@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import classes from './BurgerIngredient.css';
+import Auxi from '../../../hoc/Auxi';
 import PropTypes from 'prop-types';
 
-class burgerIngredient extends Component {
-
-    let ingredient = null;
+class BurgerIngredients extends Component {
+    render () {
+        let ingredient = null;
 
     switch (this.props.type) {
         case('bread-bottom'):
-            ingredient = <div className={classes.BreadBootom}></div>
+            ingredient = <div className={classes.BreadBottom}></div>
             break;
 
         case('bread-top'):
@@ -41,10 +42,11 @@ class burgerIngredient extends Component {
     }
 
     return ingredient;
+    }
+}
+    
+BurgerIngredients.propTypes = {
+    type: PropTypes.string.isRequired
 }
 
-BurgerIngredient.propTypes = {
-    type: PropTypes.string.isRequired;
-}
-
-export default BurgerIngredient;
+export default BurgerIngredients;
